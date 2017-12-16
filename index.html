@@ -1,60 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBDKFlfYjJLfJ75CajPguxQRji3qbmLiiU",
+    authDomain: "jagrut0001.firebaseapp.com",
+    databaseURL: "https://jagrut0001.firebaseio.com",
+    projectId: "jagrut0001",
+    storageBucket: "",
+    messagingSenderId: "529460288369"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
   <title>Jagrut - Gathering of Vibes</title>
   <meta charset="utf-8">
+  <link rel="icon" href="http://example.com/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script type="text/javascript">
+ document.addEventListener("keyup",fun,false);
+ function fun(e){
+   if(e.type=="keyup"){
+    if(e.keyCode==120)
+      document.getElementsByClassName("overlay-show")[0].style.display="block";
+    }
+ }
+function fun2(e){
+    document.getElementsByClassName("overlay-show")[0].style.display="block";
+    
+ }
+
+
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+function myFunction() {
+    if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+    } else {
+        video.pause();
+        btn.innerHTML = "Play";
+    }
+}
+</script>
+
+
+
+
+<style> 
+
+
+
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+
+
+
+
+
+
+
+.overlay-show{
+position:fixed;
+ top:0;
+ left:0;
+ background:rgba(0,0,0,0.95);
+ z-index:1035; 
+ width:100%;
+ height:100%;
+ display:none;
+ }
+
+.navbar li{
+
+text-shadow: 0px  0px 1px rgba(225,190,170,0.2);   padding-top: 0px;padding-bottom: 0px;margin-top: 0px;margin-bottom: 0px;
+
+}
+
+/* make keyframes that tell the start state and the end state of our object */
+ 
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+ 
+.fade-in {
+ opacity:0;  /* make things invisible upon start */
+ -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+ -moz-animation:fadeIn ease-in 1;
+ animation:fadeIn ease-in 1;
+ 
+ -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+ -moz-animation-fill-mode:forwards;
+ animation-fill-mode:forwards;
+ 
+ -webkit-animation-duration:1s;
+ -moz-animation-duration:1s;
+ animation-duration:0.5s;
+}
+ 
+.fade-in.one {
+-webkit-animation-delay: 0.7s;
+-moz-animation-delay: 0.7s;
+animation-delay: 0.7s;
+}
+ 
+.fade-in.two {
+-webkit-animation-delay: 1.2s;
+-moz-animation-delay:1.2s;
+animation-delay: 1.2s;
+}
+ 
+.fade-in.three {
+-webkit-animation-delay: 1.6s;
+-moz-animation-delay: 1.6s;
+animation-delay: 1.6s;
+}
+ 
+
+ .button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+
+  padding: 20px;
+width: 170px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+.style_prevu_kit
+{
+    display:inline-block;
+    border:0;
+
+    position: relative;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);   
+
+}
+.style_prevu_kit:hover
+{
+    box-shadow: 0px 0px 150px #000000;
+   
+
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+    background-color: rgba(255,255,255,0.1);
+    color: blue;
+}
+</style>
+
+
 </head>
-<body>
-
-
-<nav class="navbar navbar-default  navbar-fixed-top">
-  <div class="container-fluid">
+<body  id="fade"   style="font-family: 'Raleway', sans-serif;">
+<video style="z-index: -1; opacity: 0.1" class="fade-in two" autoplay muted loop id="myVideo">
+  <source src="clouds.mp4" type="video/mp4">
+</video>
+<div style="  background-color: rgba(255,255,255,0.6);">
+<div class="overlay-show" onclick='this.style.display ="none";' onmousemove='this.style.display ="none";'><center><br><br><br><img style="float: center;" src="transparent.jpg" /><br><br><h4 style="font-size:50px;color:white;">Jagrut<br><span style="font-size: 0.6em">Gathering of vibes</span></h4></center></div>
+<nav  class=" fade-in one  navbar navbar-default navfont  navbar-fixed-top" style="font-size: 1.1em; padding-top: 10px;" >
+  <div class="container-fluid ">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-       <a href="index.html" class="active" ><img src="img/resizedlogo.png" height="50px" width="150px"  alt=""></a>
+       <a  onclick="fun2();" onload="fun2();" href="index.html" class="active style_prevu_kit" ><img src="img/resizedlogo.png" height="50px" width="150px"  alt=""></a>
     </div>
+
     <div class="collapse navbar-collapse" id="myNavbar">
       <div style="float: right; margin-right: 3%;">
     <ul class="nav navbar-nav">
        <ul class="nav navbar-nav">
-      <li><a href="profiles.html">Profiles</a></li>
+      <li class="style_prevu_kit"><a  href="profiles.html">Profiles</a></li>
 
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Citizen's Voice<span class="caret"></span></a>
+      <li class="style_prevu_kit dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Citizen's Voice<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="yourvoice.html">Your Voice</a></li>
           <li><a href="feedbackportal.html">Feedback Portal</a></li>
+          <li><a href="socialfeeds.html">Social Feeds</a></li>
         </ul>
       </li>
-      <li><a href="developmentreports.html">Development Reports</a></li>
-      <li><a href="upcomingelections.html">Upcoming Elections</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="contactus.html">Contact us</a></li>
+      <li class="style_prevu_kit"><a href="developmentreports.html">Development Reports</a></li>
+      <li class="style_prevu_kit"><a href="upcomingelections.html">Upcoming Elections</a></li>
+    <li class="style_prevu_kit"><a href="events.html">Events</a></li>
+    <li class="style_prevu_kit"><a href="news.html">News</a></li>
+    <li class="style_prevu_kit"><a href="gallery.html">Gallery</a></li>
+    <li class="style_prevu_kit"><a href="contactus.html">Contact us</a></li>
+    <li class="style_prevu_kit"><a href="login.html">Login</a></li>
+      <li class="style_prevu_kit"><a href="signt.html">Sign Up</a></li>
     </ul>
     </div>
   </div>
 </nav>
 
+<div class="    container-fluid" style="
+   margin: auto 0px;  padding-top: 85px;
+">  
+  <div  id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+<div style=" margin-top: 15px;" ></div>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" style=" 
+    box-shadow: 8px 8px 8px 7px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+      <div class="item active">
+        <a href="#" ><img src="logo.jpg" style="width: 100%;"></a>
+      </div>
 
-<div class="container" style="margin-top: 50px; text-align: center;">
-  
-<h1  style=" padding-top:5%; padding-bottom: 1%; ">
+      <div class="item">
+        <a href="https://india.gov.in/spotlight/diksha-national-digital-infrastructure-teachers"><img src="diksha-home.jpg" style="width: 100%;" alt="Diksha Yojna" ></a>
+      </div>
+
+      <div class="item">
+        <a href="https://www.mygov.in/rashtriya-ekta-diwas-2017/">
+        <img src="rashtriya-ekta-diwas-31-10-17.jpg" style="width: 100%;" alt="Rashtriya Ekta Diwas" ></a>
+      </div>
+    
+      <div class="item">
+        <a href="https://www.india.gov.in/spotlight/pradhan-mantri-sahaj-bijli-har-ghar-yojana-saubhagya"><img src="pmsbhgy-home.jpg" style="width: 100%;" alt="Bijli har ghar yojna" ></a>
+      </div>
+    </div>
+<a class="left carousel-control" style=" opacity: 0.2; background-color: transparent;"  href="#myCarousel" data-slide="prev">
+      <span style=" color: black; opacity: 1;" class="style_prevu_kit glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" style=" opacity: 0.2; background-color: transparent;" href="#myCarousel" data-slide="next">
+      <span style="color: black; opacity: 1;" class=" style_prevu_kit glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class=" fade-in  three container" style="margin-top: 50px; text-align: center;">
+    
+<h1  style="text-shadow: 2px  2px 5px rgb(255,255,255), 3px  3px 7px rgb(255,170,130);   padding-top: 0px;padding-bottom: 0px;margin-top: 0px;margin-bottom: 0px;">
   JAGRUT - Gathering of Vibes
-
+  <hr style="height: 4px; border-width: 1px; border-color: orange; border-radius: 5px; color: orange; background-color: orange; width: 50%;">
 </h1>
-<h5>Jagrut is a platform for Citizen's and leaders to interact with each other. It helps citizen's to post their views, problems and needs. We provide Leaders a platform to give their community a raise while giving their capital a save!</h5>
+
+<h3 class="jumbotron" style="
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;">Jagrut is a platform for Citizen's and leaders to interact with each other. We provide leaders a way to give their community a raise while giving their capital a save. A place where citizens can share their Needs, Problems and demands to the leaders directly.</h3>
+<br>
+<a href="signt.html"> <button class="button" style="border-color: "><span>Register Now </span></button></a>
+<a href="login.html"> <button style="background-color: rgb(37,197,85);" class="button"><span>Sign In</span></button></a>
 
 
+
+
+<br>
+<hr style="height: 4px; border-width: 1px; border-color: orange; border-radius: 5px; color: orange; background-color: orange; width: 100%;">
+<br>
+
+<left>
+<h1 >Recent Events<br></h1>
+
+<ul type="bullets">
+ 
+<h3 style="float: left;"> <li>Tree plantation by Keshav Club</h3>
+</li></ul>
+<iframe  width="854" height="480" src="https://www.youtube.com/embed/V_MAyF6CWkE" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+<br><br>
+
+
+<div class="progress">
+    <div  class="progress-bar progress-bar-striped progress-bar-animated" style="width:20%"></div>
+ <center> 2150 People Registered yet!</center>
+</div>
 </div>
 
 </body>
